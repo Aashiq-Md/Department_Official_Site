@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The New College (Autonomous) — Department of Data Science (Shift II)</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #f7f7fb;
+    --card: #ffffff;
+    --ink: #1f2a37;
+    --muted: #5b6470;
+
+    --brand: #4ca3dd;
+    --brand-2: #8ec07c;
+    --brand-3: #f4a261;
+    --brand-4: #d291ff;
+    --accent: #ffcc66;
+
+    --ring: 24, 160, 251;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(31,42,55,.08);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(80rem 80rem at -20% -20%, #e8f3fb 0%, transparent 60%),
+      radial-gradient(60rem 60rem at 120% 10%, #fbeee6 0%, transparent 55%),
+      radial-gradient(70rem 70rem at 20% 120%, #efe6ff 0%, transparent 55%),
+      var(--bg);
+    line-height:1.6;
+  }
+
+  .container{ max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+  header{ 
+    text-align:center; 
+    padding: 48px 24px 8px; 
+    position: relative; 
+  }
+
+  .college-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 90px;
+    height: auto;
+  }
+
+  .kicker{
+    display:inline-block;
+    font-weight:600;
+    color:#2d6ea8;
+    background:#e9f3fb;
+    border:1px solid #d7e9f7;
+    padding:6px 12px;
+    border-radius:999px;
+    letter-spacing:.3px;
+  }
+  h1{ font-size: clamp(28px, 4.2vw, 44px); margin: 14px 0 6px; font-weight: 700; }
+  .sub{ color: var(--muted); margin: 0 0 8px; }
+  .tagline{ color:#2c3e50; font-weight:600; margin-top:8px; }
+
+  .nav{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin: 18px auto 10px; }
+  .nav a{
+    text-decoration:none;
+    color:#1e4662;
+    background:#eaf5ff;
+    border:1px solid #d6ecff;
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:600;
+  }
+  .nav a:hover{ background:#dff0ff }
+
+  section{ margin: 26px 0; }
+  .section-title{
+    font-size: clamp(20px, 2.6vw, 28px);
+    margin: 0 0 14px;
+    font-weight:700;
+    display:flex; align-items:center; gap:10px; justify-content:center;
+  }
+
+  .grid{ display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card{
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px;
+    border: 1px solid rgba(0,0,0,.03);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 34px rgba(31,42,55,.12);
+  }
+  .badge{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+    background:#eef7ff;
+    color:#286aa4;
+    border:1px solid #d9ebff;
+  }
+
+  .clean{ list-style:none; padding-left:0; margin:0; }
+  .clean li::before{ content:"•"; color:var(--brand-2); margin-right:10px; font-weight:700; }
+  .chips{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
+  .chip{ background:#fff6e0; color:#6a4a00; border:1px solid #ffe3a6; padding:6px 10px; border-radius:999px; font-size:13px; font-weight:600; }
+  .year{ border-left:6px solid var(--brand); padding-left:12px; margin-bottom:10px; }
+  .bulletin{ display:grid; gap:12px; }
+  .bullet{ background: #fff; border: 1px solid #f2e6d8; border-left: 8px solid var(--brand-3); padding: 14px; border-radius: 12px; box-shadow: var(--shadow); }
+  .bullet .meta{ color: #7a6a55; font-size: 13px; margin-bottom: 6px; }
+  .club-name{ font-weight: 700; color:#5b2ea0; background:#f2eaff; border:1px solid #e6d8ff; padding:6px 12px; border-radius:10px; }
+  .tick{ display:flex; gap:10px; align-items:flex-start; background:#ffffff; border:1px solid #e8ecf3; padding:12px 14px; border-radius:12px; }
+  .fade-in{ opacity:0; transform: translateY(8px); }
+  .fade-in.show{ opacity:1; transform:none; transition: all .5s ease; }
+  footer{ text-align:center; color:#586274; padding: 28px 16px 46px; }
+
+  @media (max-width: 600px){
+    .college-logo{
+      width: 60px;
+      top: 10px;
+      right: 10px;
+    }
+    header h1{ font-size: clamp(20px, 6vw, 32px); }
+  }
+</style>
+</head>
+<body>
+<header class="container">
+  <span class="kicker">The New College (Autonomous) · Chennai</span>
+  <img src="College Logo.png" alt="The New College Logo" class="college-logo">
+  
+  <h1>Department of Data Science — Shift I</h1>
+  <p class="sub">Royapettah · Pincode 600014</p>
+  <p style="margin:0;font-size:14px;color:#444;">
+    No. 87, Peters Road, Royapettah, Chennai - 600014, Tamil Nadu, India
+  </p>
+  <nav class="nav" aria-label="Primary">
+    <a href="#about">About</a>
+    <a href="#faculty">Faculty</a>
+    <a href="#courses">Courses</a>
+    <a href="#events">Events</a>
+    <a href="#clubs">Clubs</a>
+    <a href="#objectives">Objectives</a>
+  </nav>
+</header>
+
+<main class="container">
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <h2 class="section-title">About the Department</h2>
+  <div class="card">
+    <p>B.Sc. Data Science equips students with practical skills in programming, statistics, data management, and
+    machine learning. Learners build real-world problem-solving ability using Python/SQL, data visualization,
+    and model deployment basics — preparing them for analytics, ML, and AI roles.</p>
+  </div>
+</section>
+
+<!-- FACULTY -->
+<section id="faculty" class="fade-in">
+  <h2 class="section-title">Faculty</h2>
+  <div class="grid">
+    <article class="card">
+      <div class="badge">Head of the Department</div>
+      <h3>Dr. N. Manikandan</h3>
+      <div style="color:var(--muted); font-size:14px;">M.C.A, M.B.A, M.Sc., M.Com, M.A, M.Phil, Ph.D</div>
+    </article>
+    <article class="card">
+      <div class="badge">Assistant Professor</div>
+      <h3>Dr. M. Peer Ahmed Buhari</h3>
+      <div style="color:var(--muted); font-size:14px;">M.C.A, M.Sc. Psych, Ph.D</div>
+    </article>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses" class="fade-in">
+  <h2 class="section-title">Course Details</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="year"><h3>1st Year — 8 subjects / semester</h3></div>
+      <ul class="clean">
+        <li>Major (Java / Python)</li>
+        <li>Allied Mathematics (I / II)</li>
+        <li>Foundation English (I / II)</li>
+        <li>Foundation Tamil (I / II)</li>
+        <li>Value Based Education</li>
+        <li>Employability Skills</li>
+        <li>Organization Dynamics (OD) / Environmental Studies (EVS)</li>
+        <li>Practical of Major Subject</li>
+      </ul>
+      <div class="chips"><span class="chip">Sem I</span><span class="chip">Sem II</span></div>
+    </div>
+    <div class="card">
+      <div class="year" style="border-color:var(--brand-2)"><h3>2nd Year — 6 subjects / semester</h3></div>
+      <ul class="clean">
+        <li>Major (DSA / RDBMS)</li>
+        <li>Allied Statistics (III / IV)</li>
+        <li>Foundation English (III / IV)</li>
+        <li>Foundation Tamil (III / IV)</li>
+        <li>Non-Major Electives</li>
+        <li>Practical of Major</li>
+      </ul>
+      <div class="chips"><span class="chip">Sem III</span><span class="chip">Sem IV</span></div>
+    </div>
+    <div class="card">
+      <div class="year" style="border-color:var(--brand-4)"><h3>3rd Year — 4 subjects / semester</h3></div>
+      <ul class="clean">
+        <li>Major 1</li>
+        <li>Major 2</li>
+        <li>Major 3</li>
+        <li>Major 4</li>
+        <li>Practicals</li>
+      </ul>
+      <div class="chips"><span class="chip">Sem V</span><span class="chip">Sem VI</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="fade-in">
+  <h2 class="section-title">Upcoming Department Events</h2>
+  <div class="bulletin" id="eventsList" aria-live="polite"></div>
+  <div style="margin-top:12px">
+    <label class="tick"><input type="checkbox" id="hidePast"> <span>Hide past events automatically</span></label>
+    <label class="tick"><input type="checkbox" id="markAttendMode"> <span>Enable “Mark As Attended” checkboxes</span></label>
+  </div>
+</section>
+
+<!-- CLUBS -->
+<section id="club" class="fade-in">
+  <h2 class="section-title">Club of Data Science</h2>
+  <div class="grid">
+    <article class="card">
+      <div style="margin:.4rem 0 1rem">Club Name: <span class="club-name">DATAVERSE</span></div>
+  <h2 class="section-title">CLUB Members</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Abdul Gani</h3>
+      <div style="color:var(--muted); font-size:14px;">III B.Sc Data Science</div>
+    </article>
+    <article class="card">
+      <h3>Sadik</h3>
+      <div style="color:var(--muted); font-size:14px;">III B.Sc Data Science</div>
+    </article>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <h3>Faizal</h3>
+      <div style="color:var(--muted); font-size:14px;">III B.Sc Data Science</div>
+    </article>
+    <article class="card">
+      <h3>Aashiq</h3>
+      <div style="color:var(--muted); font-size:14px;">II B.Sc Data Science</div>
+    </article>
+     <article class="card">
+      <h3>Aadil</h3>
+      <div style="color:var(--muted); font-size:14px;">II B.Sc Data Science</div>
+    </article>
+  </div>
+</section>
+
+
+<!-- OBJECTIVES -->
+<section id="objectives" class="fade-in">
+  <h2 class="section-title">Objectives</h2>
+  <div class="grid">
+    <article class="card">
+      <div class="badge" style="background:#edf8ed;color:#2b6b41;border-color:#d7f0dc">Career Objectives</div>
+      <div class="tick" style="margin-top:10px"><input type="checkbox" checked> <span>Prepare graduates for roles like Data Analyst, ML Engineer, AI Engineer, BI Developer.</span></div>
+      <div class="tick"><input type="checkbox" checked> <span>Develop real-world problem solving and product thinking through projects & internships.</span></div>
+      <div class="tick"><input type="checkbox" checked> <span>Build strong communication & teamwork for industry collaboration.</span></div>
+    </article>
+    <article class="card">
+      <div class="badge" style="background:#fff4ea;color:#7a4a12;border-color:#ffe3c4">Course Objectives</div>
+      <div class="tick" style="margin-top:10px"><input type="checkbox" checked> <span>Foundations in programming, data structures, databases, and statistics.</span></div>
+      <div class="tick"><input type="checkbox" checked> <span>Competency in data wrangling, visualization, and model evaluation.</span></div>
+      <div class="tick"><input type="checkbox" checked> <span>Exposure to ML/AI pipelines and ethical data practices.</span></div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> The New College (Autonomous) — Department of Data Science, Shift I
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const EVENTS = [
+    { title:"Data Science Workshop", date:"2025-09-20", venue:"Lab 2", note:"Hands-on ML with Python" },
+    { title:"AI Guest Lecture",     date:"2025-10-10", venue:"Seminar Hall", note:"Ethics & Responsible AI" },
+    { title:"Hackathon",            date:"2025-11-29", venue:"Main Block", note:"24-hour prototype sprint" }
+  ];
+
+  const eventsList = document.getElementById('eventsList');
+  const hidePast    = document.getElementById('hidePast');
+  const attendMode  = document.getElementById('markAttendMode');
+
+  function renderEvents(){
+    eventsList.innerHTML = "";
+    const today = new Date().toISOString().slice(0,10);
+    EVENTS
+      .filter(ev => !hidePast.checked || ev.date >= today)
+      .sort((a,b)=> a.date.localeCompare(b.date))
+      .forEach(ev=>{
+        const wrap = document.createElement('div');
+        wrap.className = 'bullet';
+        wrap.innerHTML = `
+          <h4>${ev.title}</h4>
+          <div class="meta">${ev.date} · ${ev.venue}</div>
+          <div>${ev.note}</div>
+        `;
+        if(attendMode.checked){
+          const chk = document.createElement('label');
+          chk.className = 'tick';
+          chk.style.marginTop = '10px';
+          chk.innerHTML = '<input type="checkbox"> <span>Mark as attended</span>';
+          wrap.appendChild(chk);
+        }
+        eventsList.appendChild(wrap);
+      });
+  }
+  hidePast.addEventListener('change', renderEvents);
+  attendMode.addEventListener('change', renderEvents);
+  renderEvents();
+</script>
+</body>
+</html>
