@@ -7,135 +7,375 @@
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
-  :root{
-    --bg: #f7f7fb;
-    --card: #ffffff;
-    --ink: #1f2a37;
-    --muted: #5b6470;
+/* ----- BASIC COLOR SETTINGS ----- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e8f3fb, #fbeee6);
+  color: #1f2a37;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    --brand: #4ca3dd;
-    --brand-2: #8ec07c;
-    --brand-3: #f4a261;
-    --brand-4: #d291ff;
-    --accent: #ffcc66;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    --ring: 24, 160, 251;
-    --radius: 18px;
-    --shadow: 0 10px 30px rgba(31,42,55,.08);
-  }
+/* ----- HEADER ----- */
+header {
+  text-align: center;
+  padding: 40px 20px 10px;
+  position: relative;
+  animation: fadeDown 0.8s ease-out;
+}
 
-  *{box-sizing:border-box}
-  html,body{margin:0}
-  body{
-    font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: var(--ink);
-    background:
-      radial-gradient(80rem 80rem at -20% -20%, #e8f3fb 0%, transparent 60%),
-      radial-gradient(60rem 60rem at 120% 10%, #fbeee6 0%, transparent 55%),
-      radial-gradient(70rem 70rem at 20% 120%, #efe6ff 0%, transparent 55%),
-      var(--bg);
-    line-height:1.6;
-  }
+.college-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 90px;
+  transition: transform 0.4s ease;
+}
+.college-logo:hover {
+  transform:  scale(1.10);
+}
 
-  .container{ max-width: 1100px; margin: 0 auto; padding: 24px; }
+.kicker {
+  display: inline-block;
+  font-weight: bold;
+  color: #2d6ea8;
+  background-color: #e9f3fb;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
 
-  header{ 
-    text-align:center; 
-    padding: 48px 24px 8px; 
-    position: relative; 
-  }
+h1 {
+  font-size: 36px;
+  margin: 10px 0;
+  font-weight: bold;
+}
 
+.sub {
+  color: #5b6470;
+}
+
+.tagline {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+/* ----- NAVIGATION LINKS ----- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  background-color: #eaf5ff;
+  color: #1e4662;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  transition: left 0.4s ease;
+}
+.nav a:hover::after {
+  left: 0;
+}
+.nav a:hover {
+  transform: translateY(-2px);
+}
+
+/* ----- SECTION TITLE ----- */
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #2d6ea8, #f4a261);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* ----- GRID & CARD ----- */
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ----- BADGES ----- */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.badge-green {
+  background: #edf8ed;
+  color: #2b6b41;
+  border: 1px solid #d7f0dc;
+}
+.badge-orange {
+  background: #fff4ea;
+  color: #7a4a12;
+  border: 1px solid #ffe3c4;
+}
+
+/* ----- LIST STYLES ----- */
+.clean {
+  list-style: none;
+  padding: 0;
+}
+.clean li::before {
+  content: "•";
+  color: #8ec07c;
+  margin-right: 8px;
+}
+.tick {
+  position: relative;
+  margin-top: 8px;
+  padding-left: 20px;
+}
+.tick::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: green;
+}
+
+/* ----- CHIPS ----- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  background-color: #fff6e0;
+  color: #6a4a00;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ----- BULLET CARDS ----- */
+.bullet {
+  background-color: white;
+  border-left: 8px solid #f4a261;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.bullet:hover {
+  transform: translateX(6px);
+  background-color: #fff8f3;
+}
+.bullet .meta {
+  color: #7a6a55;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* ----- EVENT LIST ----- */
+/* Events List Container */
+#eventsList {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 1rem 0;
+}
+
+/* Event Card */
+.event-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Accent Line */
+.event-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+/* Animate In */
+.event-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover Effect */
+.event-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Event Title */
+.event-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a3d5f;
+  margin: 0 0 0.5rem;
+}
+
+/* Event Meta Info */
+.event-card .meta {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Event Note */
+.event-card .note {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+
+
+/* ----- CLUB SECTION ----- */
+.club-section {
+  padding: 20px;
+  text-align: center;
+}
+.club-section .section-title {
+  margin-bottom: 10px;
+  color: #222;
+}
+.club-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #0077cc;
+}
+.members-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+.member-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 180px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.member-card h3 {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+.member-card div {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ----- ANIMATIONS ----- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  color: #586274;
+  padding: 30px 16px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 600px) {
   .college-logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 90px;
-    height: auto;
+    width: 60px;
+    top: 10px;
+    right: 10px;
   }
-
-  .kicker{
-    display:inline-block;
-    font-weight:600;
-    color:#2d6ea8;
-    background:#e9f3fb;
-    border:1px solid #d7e9f7;
-    padding:6px 12px;
-    border-radius:999px;
-    letter-spacing:.3px;
+  h1 {
+    font-size: 28px;
   }
-  h1{ font-size: clamp(28px, 4.2vw, 44px); margin: 14px 0 6px; font-weight: 700; }
-  .sub{ color: var(--muted); margin: 0 0 8px; }
-  .tagline{ color:#2c3e50; font-weight:600; margin-top:8px; }
-
-  .nav{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin: 18px auto 10px; }
-  .nav a{
-    text-decoration:none;
-    color:#1e4662;
-    background:#eaf5ff;
-    border:1px solid #d6ecff;
-    padding:8px 14px;
-    border-radius:999px;
-    font-weight:600;
-  }
-  .nav a:hover{ background:#dff0ff }
-
-  section{ margin: 26px 0; }
-  .section-title{
-    font-size: clamp(20px, 2.6vw, 28px);
-    margin: 0 0 14px;
-    font-weight:700;
-    display:flex; align-items:center; gap:10px; justify-content:center;
-  }
-
-  .grid{ display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-  .card{
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 18px;
-    border: 1px solid rgba(0,0,0,.03);
-    transition: transform .18s ease, box-shadow .18s ease;
-  }
-  .card:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 12px 34px rgba(31,42,55,.12);
-  }
-  .badge{
-    display:inline-block;
-    padding:4px 10px;
-    border-radius:999px;
-    font-size:12px;
-    font-weight:600;
-    background:#eef7ff;
-    color:#286aa4;
-    border:1px solid #d9ebff;
-  }
-
-  .clean{ list-style:none; padding-left:0; margin:0; }
-  .clean li::before{ content:"•"; color:var(--brand-2); margin-right:10px; font-weight:700; }
-  .chips{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
-  .chip{ background:#fff6e0; color:#6a4a00; border:1px solid #ffe3a6; padding:6px 10px; border-radius:999px; font-size:13px; font-weight:600; }
-  .year{ border-left:6px solid var(--brand); padding-left:12px; margin-bottom:10px; }
-  .bulletin{ display:grid; gap:12px; }
-  .bullet{ background: #fff; border: 1px solid #f2e6d8; border-left: 8px solid var(--brand-3); padding: 14px; border-radius: 12px; box-shadow: var(--shadow); }
-  .bullet .meta{ color: #7a6a55; font-size: 13px; margin-bottom: 6px; }
-  .club-name{ font-weight: 700; color:#5b2ea0; background:#f2eaff; border:1px solid #e6d8ff; padding:6px 12px; border-radius:10px; }
-  .tick{ display:flex; gap:10px; align-items:flex-start; background:#ffffff; border:1px solid #e8ecf3; padding:12px 14px; border-radius:12px; }
-  .fade-in{ opacity:0; transform: translateY(8px); }
-  .fade-in.show{ opacity:1; transform:none; transition: all .5s ease; }
-  footer{ text-align:center; color:#586274; padding: 28px 16px 46px; }
-
-  @media (max-width: 600px){
-    .college-logo{
-      width: 60px;
-      top: 10px;
-      right: 10px;
-    }
-    header h1{ font-size: clamp(20px, 6vw, 32px); }
-  }
+}
 </style>
+
 </head>
 <body>
 <header class="container">
@@ -233,45 +473,47 @@
 <section id="events" class="fade-in">
   <h2 class="section-title">Upcoming Department Events</h2>
   <div class="bulletin" id="eventsList" aria-live="polite"></div>
-  <div style="margin-top:12px">
-    <label class="tick"><input type="checkbox" id="hidePast"> <span>Hide past events automatically</span></label>
-    <label class="tick"><input type="checkbox" id="markAttendMode"> <span>Enable “Mark As Attended” checkboxes</span></label>
-  </div>
+  
 </section>
 
 <!-- CLUBS -->
-<section id="club" class="fade-in">
+<section id="clubs" class="club-section">
   <h2 class="section-title">Club of Data Science</h2>
-  <div class="grid">
-    <article class="card">
-      <div style="margin:.4rem 0 1rem">Club Name: <span class="club-name">DATAVERSE</span></div>
-  <h2 class="section-title">CLUB Members</h2>
-  <div class="grid">
-    <article class="card">
+  <div>Club Name: <span class="club-name">DATAVERSE</span></div>
+  
+  <h2 class="section-title">Club Members</h2>
+  <div class="members-grid">
+    <div class="member-card">
       <h3>Abdul Gani</h3>
-      <div style="color:var(--muted); font-size:14px;">III B.Sc Data Science</div>
-    </article>
-    <article class="card">
+      <div>III B.Sc Data Science</div>
+    </div>
+    <div class="member-card">
       <h3>Sadik</h3>
-      <div style="color:var(--muted); font-size:14px;">III B.Sc Data Science</div>
-    </article>
+      <div>III B.Sc Data Science</div>
+    </div>
   </div>
 
-  <div class="grid">
-    <article class="card">
+<div class="members-grid">
+    <div class="member-card">
       <h3>Faizal</h3>
-      <div style="color:var(--muted); font-size:14px;">III B.Sc Data Science</div>
-    </article>
-    <article class="card">
+      <div>III B.Sc Data Science</div>
+    </div>
+    <div class="member-card">
       <h3>Aashiq</h3>
-      <div style="color:var(--muted); font-size:14px;">II B.Sc Data Science</div>
-    </article>
-     <article class="card">
+      <div>II B.Sc Data Science</div>
+    </div>
+  
+  <div class="member-card">
       <h3>Aadil</h3>
-      <div style="color:var(--muted); font-size:14px;">II B.Sc Data Science</div>
-    </article>
+      <div>II B.Sc Data Science</div>
+    </div>
+  </div>
   </div>
 </section>
+
+
+
+ 
 
 
 <!-- OBJECTIVES -->
@@ -279,19 +521,20 @@
   <h2 class="section-title">Objectives</h2>
   <div class="grid">
     <article class="card">
-      <div class="badge" style="background:#edf8ed;color:#2b6b41;border-color:#d7f0dc">Career Objectives</div>
-      <div class="tick" style="margin-top:10px"><input type="checkbox" checked> <span>Prepare graduates for roles like Data Analyst, ML Engineer, AI Engineer, BI Developer.</span></div>
-      <div class="tick"><input type="checkbox" checked> <span>Develop real-world problem solving and product thinking through projects & internships.</span></div>
-      <div class="tick"><input type="checkbox" checked> <span>Build strong communication & teamwork for industry collaboration.</span></div>
+      <div class="badge badge-green">Career Objectives</div>
+      <div class="tick">Prepare graduates for roles like Data Analyst, ML Engineer, AI Engineer, BI Developer.</div>
+      <div class="tick">Develop real-world problem solving and product thinking through projects & internships.</div>
+      <div class="tick">Build strong communication & teamwork for industry collaboration.</div>
     </article>
     <article class="card">
-      <div class="badge" style="background:#fff4ea;color:#7a4a12;border-color:#ffe3c4">Course Objectives</div>
-      <div class="tick" style="margin-top:10px"><input type="checkbox" checked> <span>Foundations in programming, data structures, databases, and statistics.</span></div>
-      <div class="tick"><input type="checkbox" checked> <span>Competency in data wrangling, visualization, and model evaluation.</span></div>
-      <div class="tick"><input type="checkbox" checked> <span>Exposure to ML/AI pipelines and ethical data practices.</span></div>
+      <div class="badge badge-orange">Course Objectives</div>
+      <div class="tick">Foundations in programming, data structures, databases, and statistics.</div>
+      <div class="tick">Competency in data wrangling, visualization, and model evaluation.</div>
+      <div class="tick">Exposure to ML/AI pipelines and ethical data practices.</div>
     </article>
   </div>
 </section>
+
 
 </main>
 
@@ -300,51 +543,52 @@
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); } });
-  }, { threshold: .12 });
-  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+  // Fade-in effect
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.12 });
 
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Show current year
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Events list
   const EVENTS = [
-    { title:"Data Science Workshop", date:"2025-09-20", venue:"Lab 2", note:"Hands-on ML with Python" },
-    { title:"AI Guest Lecture",     date:"2025-10-10", venue:"Seminar Hall", note:"Ethics & Responsible AI" },
-    { title:"Hackathon",            date:"2025-11-29", venue:"Main Block", note:"24-hour prototype sprint" }
+    { title: "Data Science Workshop", date: "2025-09-20", venue: "Lab 2",        note: "Hands-on ML with Python" },
+    { title: "AI Guest Lecture",      date: "2025-10-10", venue: "Seminar Hall", note: "Ethics & Responsible AI" },
+    { title: "Hackathon",             date: "2025-11-29", venue: "Main Block",   note: "24-hour prototype sprint" }
   ];
 
   const eventsList = document.getElementById('eventsList');
-  const hidePast    = document.getElementById('hidePast');
-  const attendMode  = document.getElementById('markAttendMode');
 
-  function renderEvents(){
-    eventsList.innerHTML = "";
-    const today = new Date().toISOString().slice(0,10);
-    EVENTS
-      .filter(ev => !hidePast.checked || ev.date >= today)
-      .sort((a,b)=> a.date.localeCompare(b.date))
-      .forEach(ev=>{
-        const wrap = document.createElement('div');
-        wrap.className = 'bullet';
-        wrap.innerHTML = `
-          <h4>${ev.title}</h4>
-          <div class="meta">${ev.date} · ${ev.venue}</div>
-          <div>${ev.note}</div>
-        `;
-        if(attendMode.checked){
-          const chk = document.createElement('label');
-          chk.className = 'tick';
-          chk.style.marginTop = '10px';
-          chk.innerHTML = '<input type="checkbox"> <span>Mark as attended</span>';
-          wrap.appendChild(chk);
-        }
-        eventsList.appendChild(wrap);
-      });
-  }
-  hidePast.addEventListener('change', renderEvents);
-  attendMode.addEventListener('change', renderEvents);
+ (function renderEvents() {
+  const today = new Date().toISOString().slice(0, 10);
+  const eventsList = document.getElementById('eventsList');
+  eventsList.innerHTML = "";
+
+  EVENTS
+    .filter(ev => ev.date >= today)
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .forEach((ev, idx) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'event-card';
+      wrap.style.transitionDelay = `${idx * 0.12}s`; // Stagger effect
+      wrap.innerHTML = `
+        <h4>${ev.title}</h4>
+        <div class="meta">${ev.date} · ${ev.venue}</div>
+        <div class="note">${ev.note}</div>
+      `;
+      eventsList.appendChild(wrap);
+      observer.observe(wrap);
+    });
+})();
+
+  
+
   renderEvents();
 </script>
-</body>
-</html>
-
