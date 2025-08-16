@@ -386,7 +386,7 @@ footer {
   <!-- Sections remain same as your code (About, Faculty, Courses, Events, Clubs, Objectives) -->
 
   
-  <!-- ABOUT -->
+  /*---<!-- ABOUT -->*/
   
   <section id="about" class="fade-in">
     <h2 class="section-title">About the Department</h2>
@@ -396,7 +396,7 @@ footer {
   </section> 
 
   
-  <!-- FACULTY --> 
+ /* <!-- FACULTY -->*/ 
   
   <section id="faculty" class="fade-in"> 
     <h2 class="section-title">Faculty</h2>
@@ -413,7 +413,7 @@ footer {
     </div>
   </section>
   
-  <!-- COURSES --> 
+ /* <!-- COURSES --> */
   
   <section id="courses" class="fade-in">
           <h2 class="section-title">Course Details</h2>
@@ -477,15 +477,17 @@ footer {
 
 
   
-  <!-- EVENTS -->
+ /* <!-- EVENTS -->*/
+  
   <section id="events" class="fade-in"> 
     <h2 class="section-title">Upcoming Department Events</h2> 
     <div class="bulletin" id="eventsList" aria-live="polite"></div>
   </section>
 
   
-  <!-- CLUBS --> 
-  <section id="clubs" class="club-section">
+  /*<!-- CLUB -->*/
+  
+  <section id="club" class="club-section">
     <h2 class="section-title">Club of Data Science</h2> 
     <div>Club Name: <span class="club-name">DATAVERSE</span></div> 
     <h2 class="section-title">Club Members</h2> 
@@ -508,7 +510,7 @@ footer {
   </div> 
   </section> 
   
-  <!-- OBJECTIVES --> 
+ /* <!-- OBJECTIVES --> */
 
   
   <section id="objectives" class="fade-in"> <h2 class="section-title">Objectives</h2>
@@ -549,7 +551,7 @@ footer {
   // Show current year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Events list
+ /* // Events list */
   const EVENTS = [
     { title: "Data Science Workshop", date: "2025-09-20", venue: "Lab 2", note: "Hands-on ML with Python" },
     { title: "AI Guest Lecture", date: "2025-10-10", venue: "Seminar Hall", note: "Ethics & Responsible AI" },
@@ -579,6 +581,7 @@ footer {
 </script>
 </body>
 </html>
+
 
 
 
