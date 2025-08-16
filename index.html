@@ -14,7 +14,7 @@
 /* ----- BASIC COLOR SETTINGS ----- */
 body {
   font-family: 'Poppins', sans-serif !important;
-  background: linear-gradient(135deg, #e8f3fb, #fbeee6);
+background: linear-gradient(135deg, #e8f5e9, #ffffff);
   color: #1f2a37;
   margin: 0;
   padding: 0;
@@ -24,6 +24,11 @@ body {
 h1, h2, h3, h4, h5, h6 html div {
   font-family: "Poppins" !important;
   font-weight: 600; /* optional, makes it bold like in Google Fonts */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon ,
+.carousel-indicators{
+  filter: invert(1); /* Makes icons black */
 }
 
 .container {
@@ -414,7 +419,7 @@ h1 {
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span class="visually-hidden ">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
