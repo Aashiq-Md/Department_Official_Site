@@ -367,19 +367,32 @@ footer {
 /* ----- RESPONSIVE ----- */
 @media (max-width: 600px) {
   .college-logo {
-    width: 70px;              /* a little bigger */
-    top: 10px;
-    right: 10px;
-    border-radius: 50%;       /* make it circular */
-    border: 2px solid #fff;   /* optional white border for neat look */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* optional soft shadow */
+    width: 70px;              /* slightly bigger */
+    display: block;           
+    margin: 0 auto 10px;      /* center the logo above heading */
+    position: relative;       /* no overlap */
+    top: 0;
+    right: 0;
+    border-radius: 50%;       /* circular logo */
+    border: 2px solid #fff;   /* neat border */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
   h1 {
     font-size: 22px; 
-    margin-top: 80px;         /* push heading below the logo */
+    margin-top: 0;            /* no extra margin needed */
     text-align: center;
   }
+  nav ul {
+    flex-direction: column;   /* vertical menu */
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+  }
+  nav ul li {
+    margin: 5px 0;
+  }
 }
+
 
 }
 </style>
@@ -601,6 +614,7 @@ footer {
 
   renderEvents();
 </script>
+
 
 
 
