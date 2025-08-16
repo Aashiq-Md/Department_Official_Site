@@ -367,14 +367,20 @@ footer {
 /* ----- RESPONSIVE ----- */
 @media (max-width: 600px) {
   .college-logo {
-    width: 60px;
+    width: 70px;              /* a little bigger */
     top: 10px;
     right: 10px;
+    border-radius: 50%;       /* make it circular */
+    border: 2px solid #fff;   /* optional white border for neat look */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* optional soft shadow */
   }
   h1 {
-    font-size: 24px; 
-    margin-top: 60px;
+    font-size: 22px; 
+    margin-top: 80px;         /* push heading below the logo */
+    text-align: center;
   }
+}
+
 }
 </style>
 
@@ -595,6 +601,7 @@ footer {
 
   renderEvents();
 </script>
+
 
 
 
