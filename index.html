@@ -73,21 +73,34 @@ h1 {
   border-radius: 10%;
   border: 2px solid #fff;
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  transition: transform 0.4s ease;
+  /* transition: all 0.1s ease; */
 }
 .college-logo:hover {
-  transform: scale(1.08);
+  transform: scale(1.09);
 }
 
 /* Desktop view (Laptop/PC) */
 @media (min-width: 768px) {
   .college-logo {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     width: 110px;
     height: 110px;
   }
+ .carousel {
+  width: 100%;       /* full width */
+  height: 500px;     /* adjust as you like */
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* fills space without distortion */
+}
+
 }
 
 /* Mobile view */
@@ -140,7 +153,8 @@ h1 {
 /* ----- SECTION TITLE ----- */
 .section-title {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: 1.8rem;
   font-weight: bold;
   position: relative;
@@ -380,7 +394,7 @@ h1 {
 <body>
 <header class="container">
   <span class="kicker animate__animated animate__lightSpeedInLeft">The New College (Autonomous) · Chennai</span>
-  <img src="ChatGPT Image Aug 16, 2025, 09_48_45 PM.png" alt="The New College Logo" class="college-logo animate__animated animate__zoomIn">
+  <img src="ChatGPT Image Aug 16, 2025, 09_48_45 PM.png" alt="The New College Logo" class="college-logo animate__animated  animate__zoomIn">
   <h1 class=" animate__animated animate__lightSpeedInLeft">Department of Data Science — Shift (II)</h1>
   <p class="animate__animated animate__lightSpeedInLeft" style="margin:0;font-size:14px;color:#444;">
     No. 87, Peters Road, Royapettah, Chennai - 600014, Tamil Nadu, India.
@@ -395,10 +409,7 @@ h1 {
   </nav>
 </header>
 
-
-<main class="container">
-  <!-- Sections remain same as your code (About, Faculty, Courses, Events, Clubs, Objectives) -->
-       <h2 class="section-title animate__animated animate__lightSpeedInLeft">Gallery</h2>
+<h2 class="section-title animate__animated animate__lightSpeedInLeft">Gallery</h2>
 
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade animate__animated animate__zoomIn" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -408,13 +419,13 @@ h1 {
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
-      <img src="ChatGPT Image Aug 16, 2025, 09_48_45 PM.png" class="d-block w-100" alt="...">
+      <img src="ddd9b88d-a6fc-4cc5-a139-578e1cb7ac11.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item"data-bs-interval="5000">
-      <img src="College Logo.png" class="d-block w-100" alt="...">
+      <img src="ddd9b88d-a6fc-4cc5-a139-578e1cb7ac11.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item"data-bs-interval="5000">
-      <img src="ChatGPT Image Aug 16, 2025, 09_48_45 PM.png" class="d-block w-100" alt="...">
+      <img src="ddd9b88d-a6fc-4cc5-a139-578e1cb7ac11.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -427,6 +438,9 @@ h1 {
   </button>
 </div>
   
+<main class="container">
+  <!-- Sections remain same as your code (About, Faculty, Courses, Events, Clubs, Objectives) -->
+       
   <section id="about" class="fade-in">
     <h2 class="section-title">About the Department</h2>
     <div class="card">
@@ -528,7 +542,8 @@ h1 {
   
   <section id="club" class="club fade-in" >
     <h2 class="section-title">Club of Data Science</h2> 
-    <div>Club Name: <span class="club-name">DATAVERSE</span></div> 
+    <div >Club Name: <span class="club-name ">DATAVERSE</span></div> 
+    <img src="ChatGPT Image Aug 16, 2025, 09_48_45 PM.png" class="college-logo fade-in" style="position:inherit;padding-top: 10px;"></img>
     <h2 class="section-title">Club Members</h2> 
     <div class="members-grid fade-in" > <div class="member-card">
       <h3>B.Abdul Gani Suhaib</h3> 
@@ -572,7 +587,7 @@ h1 {
   
 </main>
 
-<footer>
+<footer style="display: flex;align-items: center;justify-content: center;">
   © <span id="year"></span> The New College (Autonomous) — Department of Data Science, Shift II
 </footer>
 
